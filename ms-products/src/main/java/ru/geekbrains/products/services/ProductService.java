@@ -11,18 +11,16 @@ import ru.geekbrains.products.repositories.ProductRepository;
 
 import java.util.Optional;
 
-
 @Service
 @RequiredArgsConstructor
 public class ProductService {
-
     private final ProductRepository productRepository;
 
     public Optional<Product> findProductById(Long id) {
         return productRepository.findById(id);
     }
 
-    public Optional<ProductDto> findProductDtoById(Long id){
+    public Optional<ProductDto> findProductDtoById(Long id) {
         return productRepository.findById(id).map(ProductDto::new);
     }
 
@@ -34,8 +32,7 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public void deleteById(Long id){
+    public void deleteById(Long id) {
         productRepository.deleteById(id);
     }
 }
-

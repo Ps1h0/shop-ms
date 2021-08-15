@@ -14,6 +14,7 @@
     <artifactId>shop-ms</artifactId>
     <version>0.0.1</version>
     <name>shop-ms</name>
+
     <packaging>pom</packaging>
 
     <properties>
@@ -28,7 +29,6 @@
         <module>ms-products</module>
         <module>ms-orders</module>
         <module>ms-payments</module>
-
     </modules>
 
     <dependencies>

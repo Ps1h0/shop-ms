@@ -6,14 +6,13 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class ProductDto {
-
     private Long id;
-    private String name;
-    private double cost;
+    private String title;
+    private int price;
 
     public ProductDto(Product p) {
         this.id = p.getId();
-        this.name = p.getName();
-        this.cost = p.getCost();
+        this.title = p.getTitle();
+        this.price = p.getPrice();
     }
 }
