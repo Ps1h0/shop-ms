@@ -10,13 +10,13 @@ import java.time.Duration;
 @RequiredArgsConstructor
 public class RedisRepository {
 
-    private RedisTemplate<String, Object> redisTemplate;
+    private final RedisTemplate<String, Object> redisTemplate;
 
     public void saveToken(String token){
-        redisTemplate.expire(token, Duration.ofHours(3));
+        redisTemplate.opsForValue().set("token:" + token, 1, Duration.ofHours(1));
     }
 
     public boolean checkToken(String token){
-        return redisTemplate.hasKey(token);
+        return redisTemplate.opsForValue().get("token:" + token) != null;
     }
 }
