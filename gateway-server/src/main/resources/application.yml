@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    discovery:
+      enabled: true
+    gateway:
+      gdefault-filters:
+        - DedupeResponseHeader=Access-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      metrics:
+        enabled: true
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: ms-auth
+          uri: lb://ms-auth
+          predicates:
+            - Path=/api/*/auth/**
+
+        - id: ms-products
+          uri: lb://ms-products
+          predicates:
+            - Path=/api/*/products/**
+
+        - id: ms-order
+          uri: lb://ms-order
+          predicates:
+            - Path=/api/*/orders/**,/api/*/cart/**
+
