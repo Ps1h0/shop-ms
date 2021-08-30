@@ -35,3 +35,7 @@ spring:
           predicates:
             - Path=/api/*/orders/**,/api/*/cart/**
 
+eureka:
+  client:
+    service-url:
+      default-zone: ${EUREKA_URI:http://localhost:8761/eureka}

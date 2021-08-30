@@ -6,8 +6,8 @@
         <groupId>ru.geekbrains</groupId>
         <artifactId>shop-ms</artifactId>
         <version>0.0.1</version>
-
     </parent>
+
     <artifactId>eureka-server</artifactId>
     <version>0.0.1</version>
     <name>eureka-server</name>
