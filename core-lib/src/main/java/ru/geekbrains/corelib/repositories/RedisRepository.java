@@ -2,11 +2,11 @@ package ru.geekbrains.corelib.repositories;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 
-@Repository
+@Component
 @RequiredArgsConstructor
 public class RedisRepository {
 

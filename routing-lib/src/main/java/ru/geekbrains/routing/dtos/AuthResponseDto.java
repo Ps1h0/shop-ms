@@ -1,4 +1,4 @@
-package ru.geekbrains.auth.dtos;
+package ru.geekbrains.routing.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: ms-auth
+    name: ms-orders
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:mydatabase;MODE=PostgreSQL
@@ -19,7 +19,6 @@ spring:
       enabled: true
       settings:
         web-allow-others: false
-
 eureka:
   client:
     service-url:
