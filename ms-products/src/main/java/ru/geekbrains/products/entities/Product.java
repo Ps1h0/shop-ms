@@ -13,24 +13,22 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 public class Product {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "title")
+    private String title;
 
-    @Column(name = "cost")
-    private double cost;
+    @Column(name = "price")
+    private int price;
 
-    @Column(name = "created_time")
+    @Column(name = "created_at")
     @CreationTimestamp
-    private LocalDateTime createdTime;
+    private LocalDateTime createdAt;
 
-    @Column(name = "updated_time")
+    @Column(name = "updated_at")
     @UpdateTimestamp
-    private LocalDateTime updatedTime;
-
+    private LocalDateTime updatedAt;
 }

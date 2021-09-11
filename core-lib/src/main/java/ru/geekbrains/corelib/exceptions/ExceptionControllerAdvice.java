@@ -13,7 +13,7 @@ public class ExceptionControllerAdvice {
     @ExceptionHandler
     public ResponseEntity<?> handleResourceNotFoundException(ResourceNotFoundException e){
         log.error(e.getMessage());
-        ShopError error = new ShopError(HttpStatus.NOT_FOUND.value(), e.getMessage());
+        MarketError error = new MarketError(HttpStatus.NOT_FOUND.value(), e.getMessage());
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 }

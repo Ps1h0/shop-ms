@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>ms-products</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>ms-products</name>
 
     <dependencies>
