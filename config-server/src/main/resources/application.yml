@@ -1,0 +1,15 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Ps1h0/shop-ms
+          default-label: master
+          username: Ps1h0
+          password: Ybrbnf1502
+          clone-on-start: true
