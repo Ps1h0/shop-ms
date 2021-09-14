@@ -23,6 +23,10 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
+    public Optional<Product> findProductById(Long id){
+        return productRepository.findById(id);
+    }
+
     public Optional<ProductDto> findProductDtoById(Long id) {
         return productRepository.findById(id).map(this::toDto);
     }
@@ -47,7 +51,7 @@ public class ProductService {
         return modelMapper.map(product, ProductDto.class);
     }
 
-    private Product toEntity(ProductDto productDto) throws ParseException{
+    private Product toEntity(ProductDto productDto) {
         return modelMapper.map(productDto, Product.class);
     }
 }
