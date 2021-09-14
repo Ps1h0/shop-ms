@@ -19,6 +19,6 @@ public class RepositoryTest {
     @Test
     public void initDbTest() {
         List<Product> genresList = productRepository.findAll();
-        Assertions.assertEquals(3, genresList.size());
+        Assertions.assertEquals(17, genresList.size());
     }
 }
