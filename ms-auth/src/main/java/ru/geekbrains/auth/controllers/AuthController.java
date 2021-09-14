@@ -3,14 +3,14 @@ package ru.geekbrains.auth.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import ru.geekbrains.auth.dtos.AuthRequestDto;
-import ru.geekbrains.auth.dtos.AuthResponseDto;
-import ru.geekbrains.auth.dtos.SignUpRequestDto;
 import ru.geekbrains.auth.entities.User;
 import ru.geekbrains.auth.services.UserService;
 import ru.geekbrains.corelib.interfaces.ITokenService;
 import ru.geekbrains.corelib.models.UserInfo;
 import ru.geekbrains.corelib.repositories.RedisRepository;
+import ru.geekbrains.routing.dtos.AuthRequestDto;
+import ru.geekbrains.routing.dtos.AuthResponseDto;
+import ru.geekbrains.routing.dtos.SignUpRequestDto;
 
 import java.util.ArrayList;
 import java.util.List;

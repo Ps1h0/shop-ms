@@ -12,8 +12,8 @@ import ru.geekbrains.products.entities.ProductDto;
 import ru.geekbrains.products.repositories.specifications.ProductSpecifications;
 import ru.geekbrains.products.services.ProductService;
 
+import java.text.ParseException;
 import java.util.List;
-
 
 @RestController
 @RequestMapping("/api/v1/products")
@@ -40,21 +40,19 @@ public class ProductController {
         return productService.findProductDtoById(id).orElseThrow(() -> new ResourceNotFoundException("Product with id: " + id + " doens't exist"));
     }
 
-    //TODO допилить
-//    @GetMapping("/ids")
-//    public List<ProductDto> findProductById(@RequestParam List<Long> ids){
-//        return productService.findProductDtoByIds(ids);
-//    }
+    @GetMapping("/ids")
+    public List<ProductDto> findProductById(@RequestParam List<Long> ids){
+        return productService.findProductDtoByIds(ids);
+    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Product saveNewProduct(@RequestBody Product product) {
-        product.setId(null);
+    public ProductDto saveNewProduct(@RequestBody ProductDto product) throws ParseException {
         return productService.saveOrUpdate(product);
     }
 
     @PutMapping
-    public Product updateProduct(@RequestBody Product product) {
+    public ProductDto updateProduct(@RequestBody ProductDto product) throws ParseException{
         return productService.saveOrUpdate(product);
     }
 

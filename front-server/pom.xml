@@ -2,26 +2,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
-        <groupId>ru.geekbrains</groupId>
         <artifactId>shop-ms</artifactId>
+        <groupId>ru.geekbrains</groupId>
         <version>0.0.1</version>
     </parent>
 
-    <artifactId>ms-auth</artifactId>
+    <artifactId>front</artifactId>
     <version>0.0.1</version>
-    <name>ms-auth</name>
+
+    <properties>
+        <java.version>11</java.version>
+    </properties>
 
     <dependencies>
         <dependency>
             <groupId>ru.geekbrains</groupId>
             <artifactId>core-lib</artifactId>
-            <version>0.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>ru.geekbrains</groupId>
-            <artifactId>routing-lib</artifactId>
             <version>0.0.1</version>
         </dependency>
     </dependencies>

@@ -30,6 +30,7 @@
         <module>ms-products</module>
         <module>ms-orders</module>
         <module>ms-payments</module>
+        <module>front-server</module>
     </modules>
 
     <dependencies>
