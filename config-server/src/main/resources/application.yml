@@ -9,7 +9,7 @@ spring:
       server:
         git:
           uri: https://github.com/Ps1h0/shop-ms
-          default-label: master
-          username: Ps1h0
-          password: Ybrbnf1502
+          default-label: main
+          username:
+          password:
           clone-on-start: true
