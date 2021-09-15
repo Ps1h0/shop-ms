@@ -18,8 +18,6 @@ public class CartController {
 
     private final CartService cartService;
 
-    private final ITokenService tokenService;
-
     @PostMapping
     public UUID createNewCart(){
         if (SecurityContextHolder.getContext().getAuthentication().getPrincipal() == null) {

@@ -7,7 +7,7 @@ spring:
     discovery:
       enabled: true
     gateway:
-      gdefault-filters:
+      default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:
         corsConfigurations:
@@ -32,14 +32,13 @@ spring:
           predicates:
             - Path=/api/*/products/**
 
-        - id: ms-order
+        - id: ms-orders
           uri: lb://ms-orders
           predicates:
             - Path=/api/*/orders/**,/api/*/cart/**
     loadbalancer:
       ribbon:
         enabled: false
-
 eureka:
   client:
     service-url:

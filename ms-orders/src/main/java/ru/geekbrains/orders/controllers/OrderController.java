@@ -25,8 +25,6 @@ public class OrderController {
 
     private final CartService cartService;
 
-    private final ITokenService tokenService;
-
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public OrderDto createOrderFromCart(@RequestParam UUID cartUuid, @RequestParam String address) {

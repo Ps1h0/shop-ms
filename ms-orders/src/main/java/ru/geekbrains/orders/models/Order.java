@@ -34,12 +34,13 @@ public class Order {
     @Column(name = "price")
     private int price;
 
-    @CreationTimestamp
     @Column(name = "created_at")
+    @CreationTimestamp
     private LocalDateTime createdAt;
 
-    @UpdateTimestamp
+
     @Column(name = "updated_at")
+    @UpdateTimestamp
     private LocalDateTime updatedAt;
 
     public Order(Cart cart, Long userId, String address) {

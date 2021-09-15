@@ -97,5 +97,4 @@ public class JdbcRepository {
             throw new IllegalStateException("Can't read input stream", var2);
         }
     }
-
 }
