@@ -3,10 +3,10 @@ server:
 
 eureka:
   client:
-    register-with-eureka: false
-    fetch-registry: false
+    registerWithEureka: false
+    fetchRegistry: false
 
-#spring:
-#  cloud:
-#    config:
-#      uri: http://localhost:8081
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8081

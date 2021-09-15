@@ -1,3 +1,5 @@
+server:
+  port: 5555
 spring:
   application:
     name: gateway-server
@@ -6,7 +8,7 @@ spring:
       enabled: true
     gateway:
       gdefault-filters:
-        - DedupeResponseHeader=Access-Allow-Credentials Access-Control-Allow-Origin
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:
         corsConfigurations:
           '[/**]':
@@ -31,9 +33,12 @@ spring:
             - Path=/api/*/products/**
 
         - id: ms-order
-          uri: lb://ms-order
+          uri: lb://ms-orders
           predicates:
             - Path=/api/*/orders/**,/api/*/cart/**
+    loadbalancer:
+      ribbon:
+        enabled: false
 
 eureka:
   client:

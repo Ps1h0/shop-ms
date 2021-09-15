@@ -11,6 +11,6 @@ import java.util.UUID;
 @Repository
 public interface CartRepository extends JpaRepository<Cart, UUID> {
 
-    @Query("SELECT c FROM Cart WHERE c.userId = ?1")
+    @Query("select c from Cart c where c.userId = ?1")
     Optional<Cart> findByUserId(Long id);
 }
