@@ -1,5 +1,5 @@
 server:
-  port: 0
+  port: 8888
 
 spring:
   application:
@@ -8,8 +8,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/Ps1h0/shop-ms
-          default-label: main
+          uri: https://github.com/Ps1h0/shop-configs
+          default-label: master
           username:
           password:
           clone-on-start: true

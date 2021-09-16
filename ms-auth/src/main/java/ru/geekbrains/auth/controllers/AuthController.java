@@ -1,9 +1,10 @@
 package ru.geekbrains.auth.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.geekbrains.auth.entities.User;
+import ru.geekbrains.auth.repositories.JdbcRepository;
 import ru.geekbrains.auth.services.UserService;
 import ru.geekbrains.corelib.interfaces.ITokenService;
 import ru.geekbrains.corelib.models.UserInfo;
@@ -17,16 +18,21 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/auth")
+@RequiredArgsConstructor
 public class AuthController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
-    @Autowired
-    private ITokenService iTokenService;
+    private final ITokenService iTokenService;
 
-    @Autowired
-    private RedisRepository redisRepository;
+    private final RedisRepository redisRepository;
+
+    private final JdbcRepository jdbcRepository;
+
+    @GetMapping("/jdbc")
+    public User registerUser(@RequestParam String email){
+        return jdbcRepository.getByEmail(email).get();
+    }
 
     @PostMapping("/signup")
     @ResponseStatus(HttpStatus.CREATED)

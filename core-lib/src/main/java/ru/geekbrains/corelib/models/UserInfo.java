@@ -14,8 +14,6 @@ import java.util.List;
 public class UserInfo {
 
     private Long userId;
-
     private String userEmail;
-
     private List<String> role;
 }

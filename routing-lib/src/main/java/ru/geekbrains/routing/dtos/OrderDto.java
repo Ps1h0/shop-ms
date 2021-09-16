@@ -11,12 +11,8 @@ import java.util.List;
 public class OrderDto {
 
     private Long id;
-
     private Long userId;
-
     private List<ProductDto> products;
-
     private LocalDateTime createdAt;
-
     private LocalDateTime updatedAt;
 }

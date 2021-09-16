@@ -1,0 +1,27 @@
+<h3>Корзина</h3>
+<table ng-show="happyUserCart.items.length > 0" className="table table-hover" cellPadding="0" cellSpacing="0">
+    <thead>
+    <tr>
+        <td>Название</td>
+        <td>Количество</td>
+        <td>Цена</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="oi in happyUserCart.items">
+        <td>{{oi.productTitle}}</td>
+        <td>{{oi.quantity}}</td>
+        <td>{{oi.pricePerProduct + ' x ' + oi.quantity + ' = ' + oi.price}}</td>
+    </tr>
+    <tr>
+        <td>Итого</td>
+        <td></td>
+        <td>{{happyUserCart.totalPrice}}</td>
+    </tr>
+    </tbody>
+</table>
+<span ng-show="happyUserCart.items.length == 0">Ваша корзина пуста</span>
+<button ng-show="happyUserCart.items.length > 0" className="btn btn-primary" ng-click="goToOrderSubmit()">Перейти к
+    оформлению заказа</button>
+<button ng-show="happyUserCart.items.length > 0" className="btn btn-danger" ng-click="clearCart()">Очистить
+    корзину</button>

@@ -29,6 +29,19 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public User changePassword(Integer userId, String oldPassword, String newPassword){
+        User user = userRepository.findById(userId).get();
+        if (user.getPassword().equals(passwordEncoder.encode(oldPassword)))
+            user.setPassword(passwordEncoder.encode(newPassword));
+        return userRepository.save(user);
+    }
+
+    public User restorePassword(String email, String newPassword){
+        User user = userRepository.findByEmail(email);
+        user.setPassword(passwordEncoder.encode(newPassword));
+        return userRepository.save(user);
+    }
+
     public User findByEmail(String email) {
         return userRepository.findByEmail(email);
     }

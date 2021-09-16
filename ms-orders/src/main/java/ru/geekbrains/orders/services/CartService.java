@@ -9,7 +9,7 @@ import ru.geekbrains.orders.models.CartItem;
 import ru.geekbrains.orders.repositories.CartRepository;
 import ru.geekbrains.routing.dtos.CartDto;
 import ru.geekbrains.routing.dtos.ProductDto;
-import ru.geekbrains.routing.feigns.ProductClient;
+import ru.geekbrains.routing.clients.ProductClient;
 
 
 import javax.transaction.Transactional;
